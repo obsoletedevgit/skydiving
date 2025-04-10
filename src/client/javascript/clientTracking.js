@@ -5,12 +5,16 @@ let savedPos = "";
 function init(){
 	if(localStorage.getItem("friendlyName")){
 		document.getElementById("clientInfoEntry").style.display = "none";
+		document.getElementById("startTrackingButton").style.display = "flex";
 		updateInfoPopup("INFO: friendly name set & location granted!", 1);
 	} else {
 		localStorage.clear();
+		document.getElementById("startTrackingButton").style.display = "none";
 		localStorage.setItem("diveNum", 1);
 	}
-}
+
+	document.getElementById("diveNumberText").innerText = "dive number: " + localStorage.getItem("diveNum");
+} 
 
 function saveUserInfo(){
 	const friendlyName = document.getElementById("nameInput").value;
@@ -26,6 +30,7 @@ function saveUserInfo(){
 function success(position) {
 	updateInfoPopup("INFO: friendly name set & location granted!", 1);
 	document.getElementById("clientInfoEntry").style.display = "none";	
+	document.getElementById("startTrackingButton").style.display = "flex";
 }
 
 function error() {
@@ -60,6 +65,7 @@ function stopTracking(){
 		document.getElementById("stopTrackingContainer").style.display = "none";
 
 		localStorage.setItem("diveNum", Number(localStorage.getItem("diveNum")) + 1);
+		document.getElementById("diveNumberText").innerText = "dive number: " + localStorage.getItem("diveNum");
 	} else {
 		updateInfoPopup("WARN: Incorrect pin!", 3);
 	}
