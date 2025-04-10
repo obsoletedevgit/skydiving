@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYDIVING</title>
+
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/landing/landing.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <h1>Skydiving client - diver page</h1>
+        <div class="info-popup" id="infoPopup">
+            <h6 class="info-popup-text" id="infoPopupText"></h6>
+        </div>
+    </div>
+
+    <div class="client-container" id="clientInfoEntry">
+        <input type="text" id="nameInput" name="nameInput" placeholder="enter friendly name...">
+        <input type="button" value="submit" onclick="saveUserInfo()">
+    </div>
+
+    <div class="client-container" id="clientStartStop">
+        <input type="button" value="start tracking..." id="startTrackingButton" name="startTrackingButton" onclick="startTracking()">
+
+        <div class="client-container" id="stopTrackingContainer" style="display: none;">
+            <h3 id="stopTrackingText">pin to stop tracking: 4076</h3>
+            <input type="number" id="stopTrackingInput" placeholder="pin">
+            <input type="button" onclick="stopTracking()" value="stop tracking">
+        </div>
+    </div>
+</body>
+<script src="/javascript/global.js"></script>
+<script src="/javascript/clientTracking.js"></script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYDIVING</title>
+
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/data/data.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <h1>Skydiving server - data page</h1>
+        <div class="info-popup" id="infoPopup">
+            <h6 class="info-popup-text" id="infoPopupText">INFO: You are on the data analysis page!</h6>
+        </div>
+    </div>
+
+    <div class="server-container">
+        <h2>search options</h2>
+        <input type="button" value="toggle live updates" onclick="toggleLiveUpdates()">
+        <input type="text" id="diverNameInput" name="diverNameInput" placeholder="diver name...">
+        <input type="text" id="diveNumInput" name="diveNumInput" placeholder="dive number...">
+        <input type="button" value="submit search" onclick="downloadInfo()">
+    </div>
+
+    <div class="server-container">
+        <table id="diveTable">
+            <tr>
+                <th>Dive ID</th>
+                <th>Diver name</th>
+                <th>Dive number</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Position accuracy</th>
+                <th>Altitude</th>
+                <th>Altitude accuracy</th>
+                <th>Heading</th>
+                <th>Speed</th>
+                <th>Timestamp</th>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="/javascript/global.js"></script>
+<script src="/javascript/serverTracking.js"></script>
+</html>
