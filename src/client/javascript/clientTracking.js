@@ -88,7 +88,9 @@ function uploadInfo(){
 
 function getAllTrackingInfo(){
 	navigator.geolocation.getCurrentPosition(savepos, error);
-	console.log(savedPos.coords);
+	
+	document.getElementById("latitudeText").innerText = "Latitude: " + savedPos.coords.latitude;
+	document.getElementById("longitudeText").innerText = "Longitude: " + savedPos.coords.latitude;
 }
 
 function savepos(position){
